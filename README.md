@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js 스타터킷
 
-## Getting Started
+Next.js(App Router), TypeScript, Tailwind CSS v4, [shadcn/ui](https://ui.shadcn.com/), [lucide-react](https://lucide.dev/)로 빠르게 UI를 구성할 수 있는 스타터 템플릿입니다.
 
-First, run the development server:
+## 스택
+
+- **Next.js** — App Router, React 19
+- **TypeScript**
+- **Tailwind CSS** v4
+- **shadcn/ui** (Base UI 기반, preset: base-nova)
+- **lucide-react** — 아이콘
+
+## 시작하기
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000) 을 엽니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 스크립트
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| 명령 | 설명 |
+|------|------|
+| `npm run dev` | 개발 서버 |
+| `npm run build` | 프로덕션 빌드 |
+| `npm run start` | 프로덕션 서버 |
+| `npm run lint` | ESLint |
 
-## Learn More
+## 폴더 구조
 
-To learn more about Next.js, take a look at the following resources:
+| 경로 | 역할 |
+|------|------|
+| `app/` | 라우트·페이지·레이아웃 (`app/page.tsx`, `app/examples/...`) |
+| `components/layout/` | `SiteHeader`, `SiteFooter`, `MainShell` 등 공통 레이아웃 |
+| `components/ui/` | shadcn CLI로 추가한 UI 컴포넌트 |
+| `lib/utils.ts` | `cn()` 등 유틸 |
+| `lib/constants.ts` | 사이트명·내비·메인 카드 데이터 등 단일 출처 |
+| `lib/format.ts` | 날짜·숫자 포맷 헬퍼 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## shadcn/ui 컴포넌트 추가
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npx shadcn@latest add [컴포넌트명]
+```
 
-## Deploy on Vercel
+예: `npx shadcn@latest add dialog`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 배포
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Vercel](https://vercel.com/new)에 연결하거나, `npm run build` 후 정적/Node 호스팅 환경에 맞게 배포하면 됩니다.
